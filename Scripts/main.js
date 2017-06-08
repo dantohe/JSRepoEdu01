@@ -9,21 +9,21 @@
 
 
 
-function Drink(name, temp, color) {
-    this.name = name;
-    this.tem = temp;
-    this.color = color;
+// function Drink(name, temp, color) {
+//     this.name = name;
+//     this.tem = temp;
+//     this.color = color;
 
-    function setColor(newColor) {
-        this.color = newColor;
-    }
-}
+//     function setColor(newColor) {
+//         this.color = newColor;
+//     }
+// }
 
-var coffee = new Drink("BUZZZ", "cold", "black")
-console.log(coffee.color);
-document.is
-// coffee.setColor("red");
-console.log(coffee.color);
+// var coffee = new Drink("BUZZZ", "cold", "black")
+// console.log(coffee.color);
+// document.is
+// // coffee.setColor("red");
+// console.log(coffee.color);
 
 // var myCoffee = {
 //     flavour: "expresso",
