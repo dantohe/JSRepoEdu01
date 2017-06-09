@@ -1,20 +1,34 @@
 "use sctrict";
 
 
+function Cat(name, color) {
+    this.name = name
+    this.color = color
+}
+
+var f = new Cat("fluffy", "black");
+Cat.prototype.age = 3;
+
+display(Cat.prototype);
+display(f.__proto__);
+
+
+
+
 /*
 understanding prototypes
 */
 //functions have a prototype object
-var myFunction = function(){
-;
-}
+// var myFunction = function(){
+// ;
+// }
 
 // display(myFunction.prototype); //getting the empty oject
 
 // an object dones't have a prototype
-var myObject ={name:"name",color:"thiscolor"};
-display(myObject.prototype);
-display(myObject.__proto__);
+// var myObject ={name:"name",color:"thiscolor"};
+// display(myObject.prototype);
+// display(myObject.__proto__);
 
 /*
 creating a new functions for array using the prototype and defineProperty
