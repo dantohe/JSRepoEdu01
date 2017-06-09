@@ -4,12 +4,25 @@
 
 var cat = {
     name: 'fluf',
-    color: 'orange'
+    color: 'orange',
+    typeOfCat: {
+        tail: "long",
+        ears: "shortEars"
+    }
 }
 
 //get the object descriptors 
-display(Object.getOwnPropertyDescriptor(cat,'name'));
-display(Object.getOwnPropertyDescriptor(cat,'color'));
+display(Object.getOwnPropertyDescriptor(cat, 'name'));
+display(Object.getOwnPropertyDescriptor(cat, 'typeOfCat'));
+display('cat typeOfCat before freezing')
+Object.freeze(cat.typeOfCat)
+display('cat typeOfCat after  freezing')
+display(Object.getOwnPropertyDescriptor(cat, 'typeOfCat'));
+Object.defineProperty(cat, 'color', {
+    writable: false
+});
+// display(Object.getOwnPropertyDescriptor(cat, 'color'));
+// display(Object.getOwnPropertyDescriptor(cat, 'name'));
 
 
 
