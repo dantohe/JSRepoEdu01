@@ -1,25 +1,44 @@
 "use sctrict";
-var cat = {
-    name: "mushy",
-    color: "black",
-    grow: function() {
-        display("growwwwwww")
+
+//using Object.create
+
+var cat = Object.create(Object.prototype, {
+    name: {
+        value: "fluf",
+        enumerable: true,
+        writable: true,
+        configurable: true
+    },
+    color: {
+        value: "black",
+        enumerable: true,
+        writable: true,
+        configurable: true
     }
-};
-cat.age = 5;
-cat.speak = function() {
-    display("meeeeeeeeee")
-};
+})
 
 
-function Cat(name, color) {
-    this.name = name
-    this.color = color
-}
+// var cat = {
+//     name: "mushy",
+//     color: "black",
+//     grow: function() {
+//         display("growwwwwww")
+//     }
+// };
+// cat.age = 5;
+// cat.speak = function() {
+//     display("meeeeeeeeee")
+// };
 
-var caterina = new Cat("porky","white");
 
-display(caterina.name)
+// function Cat(name, color) {
+//     this.name = name
+//     this.color = color
+// }
+
+// var caterina = new Cat("porky","white");
+
+// display(caterina.name)
 // cat.speak();
 // cat.grow();
 
