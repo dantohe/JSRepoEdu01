@@ -1,16 +1,42 @@
 "use sctrict";
 
+/*
+some oject creation stuff
+*/
 
-function Cat(name, color) {
-    this.name = name
-    this.color = color
-}
+//1
+var object1 = {};
+//2
+var object2 = Object.create(Object.prototype);
+//3
+var object3 = new Object();
 
-var f = new Cat("fluffy", "black");
-Cat.prototype.age = 3;
+//dot notation
+object1.param = 'new value';
+console.log(object1.param);
 
-display(Cat.prototype);
-display(f.__proto__);
+//braket notation
+object2['param']='some new value';
+console.log(object2.param);
+var xParam = 'lula'
+object3[xParam] ='miti';
+console.log(object3[xParam]);
+
+
+
+
+/*Some basi inheritance and prototype in JS */
+
+// function Cat(name, color) {
+//     this.name = name
+//     this.color = color
+// }
+
+// var f = new Cat("fluffy", "black");
+// Cat.prototype.age = 3;
+
+// display(Cat.prototype);
+// display(f.__proto__);
 
 
 
