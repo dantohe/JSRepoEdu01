@@ -1,26 +1,66 @@
 "use sctrict";
 
+
+//3 ways to create an object
+var task = {};
+var task = new Object();
+var task = Object.create(Object.prototype);
+
+task.title = 'MyTask';
+task.description = 'MyDescription';
+task.toString = function() {
+    return this.title + ' ' + this.description;
+}
+
+//define some property
+
+Object.defineProperty(task, 'name', {
+    value: 'my name',
+    writable: true,
+    enumerable: true,
+    configurable: true
+})
+
+Object.defineProperty(task, 'toString2', {
+    value: function() {
+        return this.title + ' ' + this.description;
+    },
+    writable: false,
+    enumerable: false,
+    configurable: true
+})
+
+//some simple inheritance
+var urgenTask = Object.create(task);
+
+
+console.log(task.toString());
+console.log(task.toString2());
+console.log(Object.keys(task));
+
+
+
 /*
 some oject creation stuff
 */
 
-//1
-var object1 = {};
-//2
-var object2 = Object.create(Object.prototype);
-//3
-var object3 = new Object();
+// //1
+// var object1 = {};
+// //2
+// var object2 = Object.create(Object.prototype);
+// //3
+// var object3 = new Object();
 
-//dot notation
-object1.param = 'new value';
-console.log(object1.param);
+// //dot notation
+// object1.param = 'new value';
+// console.log(object1.param);
 
-//braket notation
-object2['param']='some new value';
-console.log(object2.param);
-var xParam = 'lula'
-object3[xParam] ='miti';
-console.log(object3[xParam]);
+// //braket notation
+// object2['param']='some new value';
+// console.log(object2.param);
+// var xParam = 'lula'
+// object3[xParam] ='miti';
+// console.log(object3[xParam]);
 
 
 
