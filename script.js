@@ -1,21 +1,35 @@
 "use sctrict";
 
+//using es6
+class Cat{
+	constructor(name,color){
+		this.name=name,
+		this.color=color
+	}
+	speak(){
+		display("mulo");
+	}
+};
+
+var cat1 = new Cat("pushyndo","brown");
+cat1.speak();
+// display(cat1.name);
 //using Object.create
 
-var cat = Object.create(Object.prototype, {
-    name: {
-        value: "fluf",
-        enumerable: true,
-        writable: true,
-        configurable: true
-    },
-    color: {
-        value: "black",
-        enumerable: true,
-        writable: true,
-        configurable: true
-    }
-})
+// var cat = Object.create(Object.prototype, {
+//     name: {
+//         value: "fluf",
+//         enumerable: true,
+//         writable: true,
+//         configurable: true
+//     },
+//     color: {
+//         value: "black",
+//         enumerable: true,
+//         writable: true,
+//         configurable: true
+//     }
+// })
 
 
 // var cat = {
