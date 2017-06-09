@@ -1,18 +1,33 @@
 "use sctrict";
 
-//using es6
-class Cat{
-	constructor(name,color){
-		this.name=name,
-		this.color=color
-	}
-	speak(){
-		display("mulo");
-	}
-};
 
-var cat1 = new Cat("pushyndo","brown");
-cat1.speak();
+
+var cat = {
+    name: 'fluf',
+    color: 'orange'
+}
+
+//get the object descriptors 
+display(Object.getOwnPropertyDescriptor(cat,'name'));
+display(Object.getOwnPropertyDescriptor(cat,'color'));
+
+
+
+
+// defining classes
+//using es6
+// class Cat{
+// 	constructor(name,color){
+// 		this.name=name,
+// 		this.color=color
+// 	}
+// 	speak(){
+// 		display("mulo");
+// 	}
+// };
+
+// var cat1 = new Cat("pushyndo","brown");
+// cat1.speak();
 // display(cat1.name);
 //using Object.create
 
