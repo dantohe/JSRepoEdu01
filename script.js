@@ -8,18 +8,59 @@ var cat = {
     typeOfCat: {
         tail: "long",
         ears: "shortEars"
+    },
+    getType: function() {
+        return this.typeOfCat.tail + ' ' + this.typeOfCat.ears;
+    },
+    fullAlternativeName: {
+        first: "defaultFirstName",
+        last: "defaultLastName"
+    },
+    getFullName: function() {
+        return 'First Name <' + this.fullAlternativeName.first +
+            '> Last Name <' +
+            this.fullAlternativeName.last;
+    },
+    setFullName: function(first, last) {
+        if (first !== null && typeof last === 'undefined') {
+            var names = first.split(' ');
+            console.log(names);
+            this.fullAlternativeName.first = names[0];
+            this.fullAlternativeName.last = names[1];
+        } else if (first !== null && last !== null) {
+            this.fullAlternativeName.first = first;
+            this.fullAlternativeName.last = last;
+        }
     }
-}
-display('first loop')
-for(var propertyName in cat){
-	display(propertyName);
-}
-display('second loop')
-for(var propertyName in cat){
-	display(propertyName+' '+cat[propertyName]);
-}
 
-display(Object.keys(cat));
+}
+display(cat.getFullName());
+display('trying with 2 names in function');
+cat.setFullName('mino', 'lauro');
+display(cat.getFullName())
+
+display('trying with 1 name in function');
+cat.setFullName('mulion ali');
+display(cat.getFullName())
+
+
+
+// display(cat.getType());
+
+// display(JSON.stringify(cat));
+// console.log(JSON.stringify(cat));
+
+
+// display('first loop')
+// for(var propertyName in cat){
+// 	display(propertyName);
+// }
+// display('second loop')
+// for(var propertyName in cat){
+// 	display(propertyName+' '+cat[propertyName]);
+// }
+
+// display(Object.keys(cat));
 
 //get the object descriptors 
 // display(Object.getOwnPropertyDescriptor(cat, 'name'));
