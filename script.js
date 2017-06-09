@@ -1,47 +1,103 @@
 "use sctrict";
 
 
-
-var cat = {
-    name: 'fluf',
-    color: 'orange',
-    typeOfCat: {
-        tail: "long",
-        ears: "shortEars"
-    },
-    getType: function() {
-        return this.typeOfCat.tail + ' ' + this.typeOfCat.ears;
-    },
-    fullAlternativeName: {
-        first: "defaultFirstName",
-        last: "defaultLastName"
-    },
-    getFullName: function() {
-        return 'First Name <' + this.fullAlternativeName.first +
-            '> Last Name <' +
-            this.fullAlternativeName.last;
-    },
-    setFullName: function(first, last) {
-        if (first !== null && typeof last === 'undefined') {
-            var names = first.split(' ');
-            console.log(names);
-            this.fullAlternativeName.first = names[0];
-            this.fullAlternativeName.last = names[1];
-        } else if (first !== null && last !== null) {
-            this.fullAlternativeName.first = first;
-            this.fullAlternativeName.last = last;
-        }
-    }
-
+/*
+understanding prototypes
+*/
+//functions have a prototype object
+var myFunction = function(){
+;
 }
-display(cat.getFullName());
-display('trying with 2 names in function');
-cat.setFullName('mino', 'lauro');
-display(cat.getFullName())
 
-display('trying with 1 name in function');
-cat.setFullName('mulion ali');
-display(cat.getFullName())
+// display(myFunction.prototype); //getting the empty oject
+
+// an object dones't have a prototype
+var myObject ={name:"name",color:"thiscolor"};
+display(myObject.prototype);
+display(myObject.__proto__);
+
+/*
+creating a new functions for array using the prototype and defineProperty
+*/
+// var arr = ['a', 'b', 'c'];
+// var last = arr[arr.length - 1];
+// Object.defineProperty(Array.prototype, 'lst', {get: function(){
+// 	return this[this.length-1];
+// }})
+
+// var brr=[1,2,3,4,5]
+// display(arr.lst);
+// display(brr.lst);
+
+
+//objects do not have a prototype object
+
+
+// function Cat(name, color) {
+//     this.name = name,
+//         this.color = color
+// }
+
+// var fluf = new Cat('milan', 'cucian')
+
+// display('Object.getPrototypeOf(Cat) '+Object.getPrototypeOf(Cat));
+// display('Object.getPrototypeOf(fluf)) '+Object.getPrototypeOf(fluf));
+
+// display(typeof(Cat));
+// display(typeof(fluf));
+
+
+// display('Cat.prototype:' + Cat.prototype);
+// display('Cat.__propto__:' + Cat.__proto__);
+
+// display('fluf.prototype:' + fluf.prototype);
+// display('fluf.__propto__:' + fluf.__proto__);
+
+// display(' '+fluf.__propto__)
+// display(fluf.prototype)
+// display(arr.prototype)
+
+
+// var cat = {
+//     name: 'fluf',
+//     color: 'orange',
+//     typeOfCat: {
+//         tail: "long",
+//         ears: "shortEars"
+//     },
+//     getType: function() {
+//         return this.typeOfCat.tail + ' ' + this.typeOfCat.ears;
+//     },
+//     fullAlternativeName: {
+//         first: "defaultFirstName",
+//         last: "defaultLastName"
+//     },
+//     getFullName: function() {
+//         return 'First Name <' + this.fullAlternativeName.first +
+//             '> Last Name <' +
+//             this.fullAlternativeName.last;
+//     },
+//     setFullName: function(first, last) {
+//         if (first !== null && typeof last === 'undefined') {
+//             var names = first.split(' ');
+//             console.log(names);
+//             this.fullAlternativeName.first = names[0];
+//             this.fullAlternativeName.last = names[1];
+//         } else if (first !== null && last !== null) {
+//             this.fullAlternativeName.first = first;
+//             this.fullAlternativeName.last = last;
+//         }
+//     }
+
+// }
+// display(cat.getFullName());
+// display('trying with 2 names in function');
+// cat.setFullName('mino', 'lauro');
+// display(cat.getFullName())
+
+// display('trying with 1 name in function');
+// cat.setFullName('mulion ali');
+// display(cat.getFullName())
 
 
 
