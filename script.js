@@ -19,34 +19,61 @@ a copy of the save and completed function - this is ineficient
 ----the alternative - use a prototype 
 that perform encapsulation of these methods 
 */
-function MyObject(arg1, arg2) {
-    this.arg1 = arg1;
-    this.arg2 = arg2;
-    this.toString = function() {
-        return this.arg1 + ' ' + this.arg2;
-    }
-}
-
-var newObject = new MyObject('argument_1', 'argument_2');
-console.log(newObject.toString());
 
 var Task = function(name) {
     this.name = name;
     this.completed = false;
-    this.completed = function() {
-            console.log('completing  Task: ' + this.name);
-            this.completed = true;
-        }
-        //this function is recreated for each copy of the object
-    this.save = function() {
-        console.log('saving Task: ' + this.name);
-    }
 }
 
+//a more eficient way to create methods using the prototype approach
+
+Task.prototype.complete = function() {
+    console.log('completing  Task: ' + this.name);
+    this.completed = true;
+};
+
+Task.prototype.save = function() {
+    console.log('saving Task: ' + this.name);
+};
+
 //creating copies of yje object 
-var myTask = new Task('my new task');
-myTask.completed();
-myTask.save();
+var myTask1 = new Task('TASK::1');
+var myTask2 = new Task('TASK::2');
+var myTask3 = new Task('TASK::3');
+var myTask4 = new Task('TASK::4');
+
+myTask1.complete();
+myTask1.save();
+myTask2.complete();
+myTask2.save();
+myTask3.complete();
+myTask3.save();
+// myTask1.completed();
+// myTask1.save();
+// var myTask2 = new Task('my task 2');
+// myTask2.completed();
+// myTask2.save();
+
+
+
+
+
+// function MyObject(arg1, arg2) {
+//     this.arg1 = arg1;
+//     this.arg2 = arg2;
+//     this.toString = function() {
+//         return this.arg1 + ' ' + this.arg2;
+//     }
+// }
+
+// var newObject = new MyObject('argument_1', 'argument_2');
+// console.log(newObject.toString());
+
+
+
+
+
+
 // //creating objects
 // //3 ways to create an object
 // var task = {};
