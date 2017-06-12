@@ -1,42 +1,65 @@
 "use sctrict";
 
 
-//3 ways to create an object
-var task = {};
-var task = new Object();
-var task = Object.create(Object.prototype);
+/*
+design patterns
+*/
+/*
+creational design patterns
+*/
 
-task.title = 'MyTask';
-task.description = 'MyDescription';
-task.toString = function() {
-    return this.title + ' ' + this.description;
+/*
+constructor pattern
+*/
+
+function MyObject(arg1, arg2){
+	this.arg1=arg1;
+	this.arg2=arg2;
+	this.toString = function(){
+		return this.arg1+' '+this.arg2;
+	}
 }
 
-//define some property
+var newObject = new MyObject('argument_1', 'argument_2');
+console.log(newObject.toString());
 
-Object.defineProperty(task, 'name', {
-    value: 'my name',
-    writable: true,
-    enumerable: true,
-    configurable: true
-})
+// //creating objects
+// //3 ways to create an object
+// var task = {};
+// var task = new Object();
+// var task = Object.create(Object.prototype);
 
-Object.defineProperty(task, 'toString2', {
-    value: function() {
-        return this.title + ' ' + this.description;
-    },
-    writable: false,
-    enumerable: false,
-    configurable: true
-})
+// task.title = 'MyTask';
+// task.description = 'MyDescription';
+// task.toString = function() {
+//     return this.title + ' ' + this.description;
+// }
 
-//some simple inheritance
-var urgenTask = Object.create(task);
+// //define some property
+
+// Object.defineProperty(task, 'name', {
+//     value: 'my name',
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+// })
+
+// Object.defineProperty(task, 'toString2', {
+//     value: function() {
+//         return this.title + ' ' + this.description;
+//     },
+//     writable: false,
+//     enumerable: false,
+//     configurable: true
+// })
+
+// //some simple inheritance
+// var urgenTask = Object.create(task);
 
 
-console.log(task.toString());
-console.log(task.toString2());
-console.log(Object.keys(task));
+// console.log(task.toString());
+// console.log(task.toString2());
+// console.log(Object.keys(task));
 
 
 
