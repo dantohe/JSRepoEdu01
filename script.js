@@ -36,18 +36,8 @@ Task.prototype.save = function() {
     console.log('saving Task: ' + this.name);
 };
 
-//creating copies of yje object 
-var myTask1 = new Task('TASK::1');
-var myTask2 = new Task('TASK::2');
-var myTask3 = new Task('TASK::3');
-var myTask4 = new Task('TASK::4');
+module.exports =Task;
 
-myTask1.complete();
-myTask1.save();
-myTask2.complete();
-myTask2.save();
-myTask3.complete();
-myTask3.save();
 // myTask1.completed();
 // myTask1.save();
 // var myTask2 = new Task('my task 2');
