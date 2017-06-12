@@ -12,17 +12,33 @@ creational design patterns
 constructor pattern
 */
 
-function MyObject(arg1, arg2){
-	this.arg1=arg1;
-	this.arg2=arg2;
-	this.toString = function(){
-		return this.arg1+' '+this.arg2;
-	}
+function MyObject(arg1, arg2) {
+    this.arg1 = arg1;
+    this.arg2 = arg2;
+    this.toString = function() {
+        return this.arg1 + ' ' + this.arg2;
+    }
 }
 
 var newObject = new MyObject('argument_1', 'argument_2');
 console.log(newObject.toString());
 
+var Task = function(name) {
+    this.name = name;
+    this.completed = false;
+    this.completed = function() {
+        console.log('completing  Task: ' + this.name);
+        this.completed = true;
+    }
+    this.save = function() {
+        console.log('saving Task: ' + this.name);
+    }
+}
+
+//creating copies of yje object 
+var myTask = new Task('my new task');
+myTask.completed();
+myTask.save();
 // //creating objects
 // //3 ways to create an object
 // var task = {};
