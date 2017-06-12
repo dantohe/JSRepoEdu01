@@ -12,6 +12,13 @@ creational design patterns
 constructor pattern
 */
 
+
+/*
+the problem with this is that each object will create 
+a copy of the save and completed function - this is ineficient
+----the alternative - use a prototype 
+that perform encapsulation of these methods 
+*/
 function MyObject(arg1, arg2) {
     this.arg1 = arg1;
     this.arg2 = arg2;
@@ -27,9 +34,10 @@ var Task = function(name) {
     this.name = name;
     this.completed = false;
     this.completed = function() {
-        console.log('completing  Task: ' + this.name);
-        this.completed = true;
-    }
+            console.log('completing  Task: ' + this.name);
+            this.completed = true;
+        }
+        //this function is recreated for each copy of the object
     this.save = function() {
         console.log('saving Task: ' + this.name);
     }
