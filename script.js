@@ -1,6 +1,5 @@
 "use sctrict";
 
-
 /*
 design patterns
 */
@@ -11,6 +10,22 @@ creational design patterns
 /*
 constructor pattern
 */
+
+
+//using the es6 
+class TaskClass {
+    constructor(name) {
+        this.name = name;
+        this.completed = false;
+    };
+    complete() {
+        console.log('completing task: ' + this.name);
+    };
+    save() {
+        console.log('saving task: ' + this.name);
+        this.completed = true;
+    };
+}
 
 
 /*
@@ -36,7 +51,7 @@ Task.prototype.save = function() {
     console.log('saving Task: ' + this.name);
 };
 
-module.exports =Task;
+module.exports = Task;
 
 // myTask1.completed();
 // myTask1.save();
