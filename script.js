@@ -24,7 +24,7 @@ class TaskClass {
     save() {
         console.log('saving task: ' + this.name);
         this.completed = true;
-    };
+    };	
 }
 
 
@@ -35,8 +35,8 @@ a copy of the save and completed function - this is ineficient
 that perform encapsulation of these methods 
 */
 
-var Task = function(name) {
-    this.name = name;
+var Task = function(data) {
+    this.name = data.name;
     this.completed = false;
 }
 
