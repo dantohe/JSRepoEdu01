@@ -1,10 +1,20 @@
 'use sctrict';
+var Task = require('./task')
+var Repo = require('./taskRepository');
 
-console.log('START');
-var s = '19970101';
 
-convertSimpleDate(s);
-console.log(convertSimpleDate(s));
+var task1 = new Task(Repo.get(1));
+var task2 = new Task({name:'some module task'});
+
+task1.complete();
+task1.save();
+
+
+// console.log('START');
+// var s = '19970101';
+
+// convertSimpleDate(s);
+// console.log(convertSimpleDate(s));
 
 // var d = new Date(s);
 // console.log('hhhhhhhhhhhhhhhhhhhhhhhhhh');
