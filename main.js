@@ -1,6 +1,73 @@
 'use sctrict';
 
+
 //factory pattern
+var carFactory = new VehicleFactory();
+var car = carFactory.createVehicle( {
+            vehicleType: 'car',
+            color: 'yellow',
+            doors: 6 } );
+ 
+// Test to confirm our car was created using the vehicleClass/prototype Car
+ 
+// Outputs: true
+console.log( car instanceof Car );
+ 
+// Outputs: Car object of color "yellow", doors: 6 in a "brand new" state
+console.log( car );
+
+
+function Car(options) {
+    this.doors = options.doors || 4;
+    this.state = options.state || 'new';
+    this.color = options.color || 'white';
+}
+
+
+function Truck(options) {
+    this.doors = options.doors || 2;
+    this.state = options.state || 'used';
+    this.wheelSize = options.wheelSize || '24';
+}
+
+function VehicleFactory() {
+    //define a default 
+    VehicleFactory.prototype.vehicleClass = Car;
+    VehicleFactory.prototype.createVehicle = function(options) {
+        switch (options.vehicleType) {
+            case 'car':
+                {
+                    this.vehicleClass = Car;
+                    break;
+                }
+            case 'truck':
+                {
+                    this.vehicleClass = Truck;
+                    break;
+                }
+        }
+        // return new this.vehicleClass(options);
+
+    }
+}
+// var RepoFactory = require('./repoFactory');
+
+// var myFactory = new RepoFactory();
+
+
+// var object1 = myFactory.getRepo('user');
+
+// object1.get();
+
+
+
+
+// var Task = require('./task');
+
+// var task = new Task({name:'first task'});
+// task.save();
+// task.complete();
+
 
 // var Task = require('./task')
 // var Repo = require('./taskRepository');
@@ -25,12 +92,12 @@
 
 function convertSimpleDate(str) {
     if (str.length != 8) {
-    	console.log('WRONG STRING');
+        console.log('WRONG STRING');
         return '';
     } else {
-    	console.log('got it right!!');
+        console.log('got it right!!');
 
-        return str.replace(/(\d{4})(\d{2})(\d{2})/,'$1/$2/$3');
+        return str.replace(/(\d{4})(\d{2})(\d{2})/, '$1/$2/$3');
     }
 }
 

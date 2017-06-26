@@ -2,9 +2,9 @@
 var repo = function() {
 
     var get = function(id) {
-        console.log('getting task ' + id);
+        console.log('getting the repo for task ' + id);
         return {
-            name: 'new task from db::' + id
+            name: 'repo is returning a new task from db::' + id
         }
     };
     

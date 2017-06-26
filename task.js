@@ -3,11 +3,14 @@ var Repo = require('./taskRepository');
 var Task = function(data) {
     this.name = data.name;
     this.completed = false;
+    this.repo = Repo.get(this.name);
+    
     console.log('initiated task with name: '+data.name);
 }
 
 Task.prototype.complete = function() {
     console.log('completing task ...');
+
     this.completed = true;
 };
 
